@@ -16,3 +16,4 @@ else:
     print("Juice")
 
 print("!")
+print(":" + str("P"))  # Concatenating then printing the concatenated string and understanding the diff between printing them individually
