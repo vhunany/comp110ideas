@@ -1,4 +1,5 @@
-def double_elements(inp_list, index=0):
+def double_elements(inp_list):
+    index = 0
     if index < len(inp_list):
         inp_list[index] *= 2  # Mutate the current element
         double_elements(inp_list, index + 1)  # Recursively call the function for the next element
