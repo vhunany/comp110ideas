@@ -1,7 +1,7 @@
 def generate_summary(inventory):
     total_units = 0
     highest_stock_item = None
-    highest_units = None
+    highest_units = 0  # Initialize to 0 as a default value
 
     # Iterate through each item in the inventory
     for item_name in inventory:
@@ -11,13 +11,14 @@ def generate_summary(inventory):
         total_units += details['units']
 
         # Check if this item has the highest number of units
-        if highest_units is None or details['units'] > highest_units:
+        if details['units'] > highest_units:
             highest_units = details['units']
             highest_stock_item = item_name
 
     return {
         'total_units': total_units,
-        'highest_stock_item': (highest_stock_item, highest_units)
+        'highest_stock_item': highest_stock_item,
+        'highest_units': highest_units
     }
 
 inventory = {
