@@ -1,4 +1,4 @@
-def organize_by_length(words: list[str] | list[int]):
+def organize_by_length(words: list[str] | list[int]) -> dict[int, list[str]] | dict[int, list[int]]:
     bin = {}
     for val in words:
         if type(val) == int: 
