@@ -1,4 +1,3 @@
-
 def add_student(students, name, grades):
     students[name] = grades
     print(f"Added student '{name}' with grades: {grades}")
