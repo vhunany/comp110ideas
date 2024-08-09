@@ -23,3 +23,20 @@ def main():
 
 
 main()
+
+"""A cozy embrace."""
+
+def hug(it: str)-> str:
+    """Surround it."""
+    return suffix(word = prefix(word = it, pre =" -("), post =")-")
+
+def suffix(word: str, post: str) -> str:
+    """After ... """
+    return word + post
+
+def prefix(word: str, pre: str ) -> str:
+    """Before ... """
+    return pre + word
+
+
+print (hug( it =" turtle "))
