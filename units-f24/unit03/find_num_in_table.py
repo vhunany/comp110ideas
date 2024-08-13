@@ -21,7 +21,6 @@ class Table:
         return {-1: -1}
 
     def __str__(self) -> str:
-        """Returns a string representation of the table."""
         table_str: str = ''
         row_idx: int = 0
         while row_idx < len(self.data):
