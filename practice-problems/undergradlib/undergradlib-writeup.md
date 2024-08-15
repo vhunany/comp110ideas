@@ -102,7 +102,7 @@ Once all the users and their books are added to the string, return the final str
 
 6. Create the `history_log` Method:
 
-Before you begin, here is an idea of how the method is works: 
+Before you begin, here is an idea of how the method works: 
 It is intended to print a complete log of all the users and the books they have checked out.
 If no books have been checked out by any user, the method should print a message like:
 
