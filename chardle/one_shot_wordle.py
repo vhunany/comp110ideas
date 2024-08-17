@@ -1,8 +1,9 @@
-def input_guess() -> str:
+def input_word() -> str:
     """Prompts the user for a 5-character word."""
     word_guess = input("Enter a 5-character word: ")
     if len(word_guess) != 5:
         print("Error: Word must contain 5 characters.")
+        exit()
     return word_guess
 
 def input_letter() -> str:
@@ -10,6 +11,7 @@ def input_letter() -> str:
     letter_guess = input("Enter a single character: ")
     if len(letter_guess) != 1:
         print("Error: Character must be a single character.")
+        exit()
     return letter_guess
 
 def contains_char(word_guess: str, letter_guess: str) -> None:
@@ -37,15 +39,20 @@ def contains_char(word_guess: str, letter_guess: str) -> None:
         print(f"{letter_guess} found at index 4")
         counter += 1
 
-    if counter != 0:
+
+    if counter == 1:
+            print(f"{counter} instance of {letter_guess} found in {word_guess}")
+
+    if counter > 1:
         print(f"{counter} instances of {letter_guess} found in {word_guess}")
-    else:
+
+    if counter == 0:
         print(f"No instances of {letter_guess} found in {word_guess}")
 
-def chardle() -> None:
+def main() -> None:
     """Main function to run the Chardle game."""
-    word = input_guess()
+    word = input_word()
     letter = input_letter()
     contains_char(word, letter)
 
-chardle()
+# main()
