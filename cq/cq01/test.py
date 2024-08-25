@@ -10,3 +10,4 @@ def password_creator(first_name, last_name, birth_year) -> None:
 password_creator(first_name="John", last_name="Doe", birth_year=1990)
 password_creator(first_name="Alice", last_name="Smith", birth_year=1985)
 
+
