@@ -8,6 +8,6 @@ def extract_character(word: str, index: int) -> str:
     return word[index]
 
 def main(word: str) -> None:
-    print(f"The hidden character is: '{extract_character(word, shift_position(get_starting_point(word)))}'")
+    print("The hidden character is: " + extract_character(word, shift_position(get_starting_point(word))))
 
 main(word="mystery")
