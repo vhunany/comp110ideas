@@ -30,9 +30,47 @@ template: overview
 
 [Solutions](#conceptual-solutions)
 
+
+## Calling functions
+
+1. For the following code snippet, write a line of code that will result in the following output: 
+
+```
+def flavor(taste: str, percent: float) -> None:
+    print("This flavor is " + str(percent) + "% " + taste)
+```
+
+Output: 
+
+~~~ {.plaintext}
+    $ python -m flavor
+    This flavor is 100% umami
+~~~
+
+
+2. For the following code snippet, write a line of code that will call the `main` function. Next, write a line of code to be inserted within the body of the `main` function. This line should call the `eat` function with the argument passed when the main function was called. 
+
+```
+def eat(food: str) -> None:
+    print("Eating " + food)
+
+def main(food: str) -> None:
+    food_item = "apple"
+    eat(food=food)
+
+```
+
+3. For the following code snippet, write a line of code that will call the `have_done` function with the arguments `"homework"` and `False`. If you wanted to print the string created by the `have_done` function, how would you modify your function call? 
+
+```
+def have_done(task, completed) -> str:
+    return "Completed " + task + ": " + str(completed)
+```
+
+
 ## Spot the error
 
-1. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+1. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
 def fuel_needed(distance, mpg):
@@ -45,7 +83,7 @@ def total_fuel_cost(distance, mpg, price_per_gallon):
 print(total_fuel_cost(distance=300, mpg=25, price_per_gallon=4))
 ```
 
-2. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+2. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
 def fuel_needed(distance, mpg):
@@ -58,7 +96,7 @@ def total_fuel_cost(distance, mpg, price_per_gallon):
 total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)
 ```
 
-3. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+3. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
 def fuel_needed(distance, mpg):
@@ -71,7 +109,7 @@ def total_fuel_cost(distance, mpg, price_per_gallon):
 total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)
 ```
 
-4. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+4. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
 def greet(name: str) -> str:
@@ -85,7 +123,7 @@ def main() -> None:
 main()
 ```
 
-5. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+5. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
 def greet(name: str) -> str:
@@ -101,7 +139,7 @@ main()
 ```
 
 
-6. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+6. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
     greet(name: str) -> str:
@@ -116,11 +154,11 @@ def main() -> None:
 main()
 ```
 
-7. Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?
+7. Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?
 
 ```
 def greet(name: str) -> str:
-    prtin("I'm so happy to see you " + name + "!")
+    print("I'm so happy to see you " + name + "!")
     print("Hello " + name + ", your name starts with an " + str(name[0]) + " and ends with an " + str(name[len(name) - 1]))
 
 
