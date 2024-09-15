@@ -27,5 +27,4 @@ def main() -> None:
     result: int = count_digits(text)
     print(result)
 
-if __name__ == "__main__":
-    main()
+main()
