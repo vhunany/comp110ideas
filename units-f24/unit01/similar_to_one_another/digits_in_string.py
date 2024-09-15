@@ -1,14 +1,14 @@
-def count_digits(text):
-    index = 0
-    digit_count = 0
-    digits = "0123456789"
+def count_digits(text: str) -> int:
+    """Count the number of digits in a given text string."""
+    index: int = 0
+    digit_count: int = 0
+    digits: str = "0123456789"
     
     while index < len(text):
-        char = text[index]
-        is_digit = False
+        char: str = text[index]
+        is_digit: bool = False
         
-        # Check if char is in the string of digits
-        digit_index = 0
+        digit_index: int = 0
         while digit_index < len(digits):
             if char == digits[digit_index]:
                 is_digit = True
@@ -21,6 +21,11 @@ def count_digits(text):
     
     return digit_count
 
-text = "abc123def456ghi789"
-result = count_digits(text)
-print(result)
+def main() -> None: 
+    """Main entry point of the program."""
+    text: str = "abc123def456ghi789"
+    result: int = count_digits(text)
+    print(result)
+
+if __name__ == "__main__":
+    main()
