@@ -20,5 +20,4 @@ def main() -> None:
     """Main entrypoint into the program."""
     print(check_number(num=13))
 
-if __name__ == "__main__":
-    main()
+main()
