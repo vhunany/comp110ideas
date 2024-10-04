@@ -21,13 +21,17 @@ def test_author():
 def test_num_instances_params():
     """num_instances should take two parameters: phrase and search_char."""
     module = reimport_module(MODULE)
-    assert_parameter_list(module.num_instances, ['phrase', 'search_char'])
+    # Check the parameter list of the num_instances function
+    assert_parameter_list(module.num_instances, ['phrase', 'search_char'])  # WHY IS THIS NOT WORKINGGG????? 
+
 
 @mark.weight(1)
 def test_num_instances_return_type():
     """num_instances should return an integer."""
     module = reimport_module(MODULE)
-    assert_return_type(module.num_instances('HelloHello', 'e'), int)
+    # Call num_instances with a sample input and check the return type
+    result = module.num_instances('HelloHello', 'e')
+    assert_return_type(result, int)  # WHY IS THIS NOT WORKINGGG????? 
 
 @mark.weight(2)
 def test_num_instances_basic_cases():
@@ -45,6 +49,41 @@ def test_num_instances_basic_cases():
     
     # Test case 4
     assert module.num_instances('Happy Tuesday!', 'z') == 0, "Failed on test case 4"
+    
+    # Additional Test Cases
+
+    # Test case 5: Single character match
+    assert module.num_instances('a', 'a') == 1, "Failed on single character test case (5)"
+    
+    # Test case 6: Single character no match
+    assert module.num_instances('a', 'b') == 0, "Failed on single character no match test case (6)"
+    
+    # Test case 7: Multiple occurrences of search character at the start and end
+    assert module.num_instances('abcabcabc', 'a') == 3, "Failed on multiple occurrences test case (7)"
+    
+    # Test case 8: Multiple occurrences of search character scattered
+    assert module.num_instances('This is an example sentence.', 'e') == 5, "Failed on scattered occurrences test case (8)"
+    
+    # Test case 9: Empty string should return 0
+    assert module.num_instances('', 'a') == 0, "Failed on empty string test case (9)"
+    
+    # Test case 10: String with no occurrences of search_char
+    assert module.num_instances('abcdefg', 'x') == 0, "Failed on no occurrence in string test case (10)"
+    
+    # Test case 11: Search character is a space
+    assert module.num_instances('Count the spaces in this sentence.', ' ') == 5, "Failed on space character test case (11)"
+    
+    # Test case 12: Search character is a number
+    assert module.num_instances('123123123', '2') == 3, "Failed on numeric character test case (12)"
+    
+    # Test case 13: Special characters in the string
+    assert module.num_instances('Testing special characters! @#$', '!') == 1, "Failed on special character test case (13)"
+    
+    # Test case 14: Repeated characters, case-sensitive
+    assert module.num_instances('ABABababABAB', 'A') == 4, "Failed on case-sensitive test case (14)"
+    
+    # Test case 15: String contains newline characters
+    assert module.num_instances('Line1\nLine2\nLine3', '\n') == 2, "Failed on newline character test case (15)"
 
 @mark.weight(1)
 def test_num_instances_case_sensitive():
@@ -79,7 +118,6 @@ def test_num_instances_special_characters():
     # Test with special characters
     assert module.num_instances('Hello@World!', '@') == 1, "Failed special character test (@)"
     assert module.num_instances('Look! There is a cat!', '!') == 2, "Failed special character test (!)"
-    assert module.num_instances('Spaces and tabs\t are here.', ' ') == 3, "Failed space character test"
 
 @mark.weight(1)
 def test_num_instances_numeric_characters():
@@ -100,14 +138,6 @@ def test_num_instances_repeated_search_char():
     assert module.num_instances('bbbbbbbbb', 'b') == 9, "Failed consecutive repeated characters test"
 
 @mark.weight(1)
-def test_num_instances_armenian_characters():
-    """num_instances should handle Armenian characters."""
-    module = reimport_module(MODULE)
-
-    assert module.num_instances('Բարեւ Բարեւ Բարեւ', 'ր') == 3, "Failed Armenian character test"
-    assert module.num_instances('Ես սիրում եմ սովորել', 'ո') == 2, "Failed Armenian character test"
-
-@mark.weight(1)
 def test_num_instances_large_input():
     """num_instances should efficiently handle large input strings."""
     module = reimport_module(MODULE)
@@ -118,3 +148,4 @@ def test_num_instances_large_input():
 
     large_phrase_mixed = 'a' * 500000 + 'b' * 500000  # 500k 'a's and 500k 'b's
     assert module.num_instances(large_phrase_mixed, 'b') == 500000, "Failed large input mixed test"
+

@@ -23,7 +23,7 @@ def count_digits(text: str) -> int:
 
 def main() -> None: 
     """Main entry point of the program."""
-    text: str = "abc123def456ghi789"
+    text: str = "abc123"
     result: int = count_digits(text)
     print(result)
 

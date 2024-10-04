@@ -47,7 +47,7 @@ def input_guess(expected_length: int) -> str:
 # Part 4. main – 30 Points
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    secret = "codes"
+    secret = "codess"
     turn = 1
     won = False
     
