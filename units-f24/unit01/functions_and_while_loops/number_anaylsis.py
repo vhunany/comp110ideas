@@ -21,3 +21,4 @@ def main() -> None:
     print(check_number(num=13))
 
 main()
+
