@@ -1,10 +1,10 @@
-def apply_discounts(order_amounts) -> list[float]:
+def apply_discounts(order_amounts: list[float]) -> list[float]:
     index: int = 0
     counter: int = 0
-    discounted_amounts = []
+    discounted_amounts: list[float] = []
 
     while index < len(order_amounts):
-        amount = order_amounts[index]
+        amount: float = order_amounts[index]
 
         if amount > 50:
             discount = 0.10
@@ -21,8 +21,8 @@ def apply_discounts(order_amounts) -> list[float]:
     return discounted_amounts
 
 def main() -> None:
-    order_amounts = [45, 75, 150, 30]
-    discounted_amounts = apply_discounts(order_amounts)
+    order_amounts: list[float] = [45.0, 75.0, 150.0, 30.0]
+    discounted_amounts: list[float] = apply_discounts(order_amounts)
     print(discounted_amounts)
 
 if __name__ == "__main__":
